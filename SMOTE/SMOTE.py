@@ -5,11 +5,11 @@ import numpy as np
 def generate_samples(sample1, sample2):
     dif = sample2 - sample1
     gap = np.random.rand()
-    return sample1 + gap*dif
+    return sample1 + gap * dif
 
 
 def oversample_data(samples, smote_proc, k):
-    smote_proc = int(len(samples) * int(smote_proc/100))
+    smote_proc = int(len(samples) * int(smote_proc / 100))
 
     nn = []
     synthetic = []
@@ -28,6 +28,6 @@ def oversample_data(samples, smote_proc, k):
 
     return synthetic
 
-#test
-#print(oversample_data(np.array([[1,2,3], [3,4,5], [1,4,2], [2,1,3], [1,1,1], [2,7,9]]), 100, 3))
 
+# test
+#print(oversample_data(np.array([[1, 2, 3], [3, 4, 5], [1, 4, 2], [2, 1, 3], [1, 1, 1], [2, 7, 9]]), 100, 3))

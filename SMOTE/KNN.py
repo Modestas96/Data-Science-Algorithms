@@ -2,13 +2,13 @@ import math
 import numpy as np
 
 
-def get_distance(sample1, sample2, dist_type='N2'):
+def get_distance(sample1, sample2, dist_type='L2'):
     assert len(sample1) == len(sample2)
     num_of_features = len(sample1)
     dist = 0
-    if dist_type == 'N2':
+    if dist_type == 'L2':
         for i in range(num_of_features):
-            dist += (sample1[i] - sample2[i])**2
+            dist += (sample1[i] - sample2[i]) ** 2
         dist = math.sqrt(dist)
 
     return dist
@@ -24,4 +24,3 @@ def find_closest_neighbors(input, samples, k):
         closest_nn.append(samples[distance[1]])
 
     return closest_nn
-
